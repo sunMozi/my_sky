@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: my-sky
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/sky_take_out
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
