@@ -36,13 +36,11 @@
   <dependencyManagement>
     <dependencies>
 
-      <!-- JWT依赖-->
       <dependency>
-        <groupId>com.auth0</groupId>
-        <artifactId>java-jwt</artifactId>
-        <version>4.5.0</version>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>5.8.29</version>
       </dependency>
-
     </dependencies>
 
   </dependencyManagement>
