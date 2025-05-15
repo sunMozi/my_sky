@@ -33,7 +33,7 @@ public class DishMapperProvider {
       sql.WHERE("dish.status = #{dishDTO.status}");
     }
     if (query.getId() != null) {
-      sql.WHERE("id = #{dishDTO.id}");
+      sql.WHERE("dish.id = #{dishDTO.id}");
     }
   }
 

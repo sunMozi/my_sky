@@ -1,7 +1,6 @@
 package com.sky.vo;
 
 
-import com.sky.entiry.DishFlavor;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.AllArgsConstructor;

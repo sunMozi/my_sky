@@ -1,17 +1,21 @@
 package com.sky.server.admin.impl;
 
 
+import cn.hutool.core.bean.BeanUtil;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.dto.DishDTO;
 import com.sky.entiry.Dish;
+import com.sky.entiry.DishFlavor;
 import com.sky.exception.BaseException;
 import com.sky.exception.ResponseCodeEnum;
+import com.sky.mapper.admin.DishFlavorMapper;
 import com.sky.mapper.admin.DishMapper;
 import com.sky.result.PageResult;
 import com.sky.server.admin.DishService;
 import com.sky.vo.DishFlavorVO;
 import com.sky.vo.DishVO;
+import com.sky.vo.FlavorVO;
 import jakarta.annotation.Resource;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -26,6 +30,9 @@ public class DishServiceImpl implements DishService {
 
   @Resource
   private DishMapper dishMapper;
+
+  @Resource
+  private DishFlavorMapper dishFlavorMapper;
 
 
   @Override
@@ -57,7 +64,9 @@ public class DishServiceImpl implements DishService {
       throw new BaseException(ResponseCodeEnum.DATA_INVALID, "菜品信息错误");
     }
     DishVO dishVO = dishes.get(0);
-
-    return null;
+    List<FlavorVO> flavors = dishFlavorMapper.selectDishFlavorByDishId(dishVO.getId());
+    DishFlavorVO dishFlavorVO = DishFlavorVO.builder().flavors(flavors).build();
+    BeanUtil.copyProperties(dishVO, dishFlavorVO);
+    return dishFlavorVO;
   }
 }
