@@ -27,7 +27,7 @@ public class DishMapperProvider {
       sql.WHERE("category_id = #{dishDTO.categoryId}");
     }
     if (query.getName() != null) {
-      sql.WHERE("name LIKE CONCAT('%', #{dishDTO.name}, '%')");
+      sql.WHERE("dish.name LIKE CONCAT('%', #{dishDTO.name}, '%')");
     }
     if (query.getStatus() != null) {
       sql.WHERE("dish.status = #{dishDTO.status}");
