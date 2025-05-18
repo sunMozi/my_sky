@@ -7,6 +7,7 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
@@ -30,7 +31,8 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     //  配置后台服务端
     registry.addInterceptor(jwtTokenAdminInterceptor)
             .addPathPatterns("/admin/**")
-            .excludePathPatterns("/admin/employee/login");
+            .excludePathPatterns("/admin/employee/login")
+            .excludePathPatterns("/doc.html, /webjars/**, /v3/api-docs/**");
     registry.addInterceptor(jwtTokenUserInterceptor)
             .addPathPatterns("/user/**")
             .excludePathPatterns("/user/user/login")
@@ -38,7 +40,20 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
             .excludePathPatterns("/user/user/selectById")
             .excludePathPatterns("/user/user/save")
             .excludePathPatterns("/user/user/delete")
-            .excludePathPatterns("/user/order/nativePay");
+            .excludePathPatterns("/user/order/nativePay")
+
+
+            .excludePathPatterns("/doc.html, /webjars/**, /v3/api-docs/**")
+            .excludePathPatterns("/v3/api-docs/**");
+
+  }
+
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/doc.html")
+            .addResourceLocations("classpath:/META-INF/resources/");
+    registry.addResourceHandler("/webjars/**")
+            .addResourceLocations("classpath:/META-INF/resources/webjars/");
   }
 
 

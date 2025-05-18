@@ -38,7 +38,10 @@ sky:
     user-token-name: authentication
 
 
-
-
-
-
+# 阿里云oss
+aliyun:
+  oss:
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    accessKeyId: LTAI5tJ6bcBF5BsQ4L574fw3
+    accessKeySecret: 9ZnH65dxss3w0reDABsfRqKo8TfPEO
+    bucketName: chengzi03

@@ -8,6 +8,10 @@ import com.sky.constant.StatusConstant;
 import com.sky.context.BaseContext;
 import com.sky.dto.CategoryDTO;
 import com.sky.entiry.Category;
+import com.sky.entiry.Dish;
+import com.sky.exception.BaseException;
+import com.sky.exception.ResponseCodeEnum;
+import com.sky.mapper.admin.DishMapper;
 import com.sky.mapper.admin.categoryMapper;
 import com.sky.result.PageResult;
 import com.sky.server.admin.categoryService;
@@ -27,10 +31,14 @@ public class CategoryServiceImpl implements categoryService {
   @Resource
   private categoryMapper categoryMapper;
 
+  @Resource
+  private DishMapper dishMapper;
+
 
   @Override
   public List<Category> list(Integer type) {
     CategoryDTO categoryDTO = new CategoryDTO();
+    categoryDTO.setType(type);
     return categoryMapper.selectCategoryList(categoryDTO);
   }
 
@@ -75,6 +83,11 @@ public class CategoryServiceImpl implements categoryService {
 
   @Override
   public void delete(Long id) {
+    List<Dish> dishes = dishMapper.selectDishByCategoryId(id);
+    if (!dishes.isEmpty()) {
+      throw new BaseException(ResponseCodeEnum.CONFLICT, "该分类下有菜品，不能删除");
+    }
+
     categoryMapper.deleteCategory(id);
   }
 }
