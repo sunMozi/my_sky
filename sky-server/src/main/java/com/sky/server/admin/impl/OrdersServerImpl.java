@@ -4,7 +4,6 @@ package com.sky.server.admin.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.dto.OrdersPageQueryDTO;
-import com.sky.entiry.Orders;
 import com.sky.mapper.admin.OrdersMapper;
 import com.sky.result.PageResult;
 import com.sky.server.admin.OrdersServer;
@@ -30,9 +29,6 @@ public class OrdersServerImpl implements OrdersServer {
   public PageResult<OrderVO> conditionSearch(OrdersPageQueryDTO query) {
     PageHelper.startPage(query.getPage(), query.getPageSize());
     List<OrderVO> ordersList = ordersMapper.selectOrdersList(query);
-    ordersList.forEach(orderVO -> {
-      orderVO.setUserName("张山");
-    });
     Page<OrderVO> page = (Page<OrderVO>) ordersList;
     return new PageResult<>(page.getTotal(), page.getResult());
   }

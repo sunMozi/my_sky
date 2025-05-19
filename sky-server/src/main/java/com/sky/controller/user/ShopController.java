@@ -1,4 +1,4 @@
-package com.sky.controller.admin;
+package com.sky.controller.user;
 
 
 import com.sky.result.Result;
@@ -7,8 +7,6 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,21 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @description
  */
 @RestController
-@RequestMapping("/admin/shop/")
-@Component("adminShopController")
+@RequestMapping("/user/shop/")
+@Component("userShopController")
 @Slf4j
 public class ShopController {
 
 
   @Resource
   private RedisUtils<Integer> redisUtils;
-
-  @PutMapping("/{status}")
-  public Result<String> startOrStop(@PathVariable Integer status) {
-    log.info("修改店铺营业状态：{}", status == 1 ? "营业中" : "打烊中");
-    redisUtils.set("SHOP_STATUS", status);
-    return Result.success();
-  }
 
   @GetMapping("status")
   public Result<Integer> getStatus() {

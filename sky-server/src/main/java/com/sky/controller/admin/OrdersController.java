@@ -27,8 +27,7 @@ public class OrdersController {
 
   @GetMapping("statistics")
   public Result<OrderStatisticsVO> statistics() {
-//    ordersServer.statistics()
-    return Result.success();
+    return Result.success(ordersServer.statistics());
   }
 
 
