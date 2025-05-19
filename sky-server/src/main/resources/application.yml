@@ -42,6 +42,6 @@ sky:
 aliyun:
   oss:
     endpoint: https://oss-cn-hangzhou.aliyuncs.com
-    accessKeyId: LTAI5tJ6bcBF5BsQ4L574fw3
-    accessKeySecret: 9ZnH65dxss3w0reDABsfRqKo8TfPEO
+    accessKeyId: ${ALIBABA_ACCESS_KEY_ID}
+    accessKeySecret: ${ALIBABA_ACCESS_KEY_SECRET}
     bucketName: chengzi03
