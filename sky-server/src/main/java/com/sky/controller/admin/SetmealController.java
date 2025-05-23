@@ -7,6 +7,7 @@ import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.server.admin.SetmealService;
 import com.sky.vo.SetmealVO;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/admin/setmeal")
 @Slf4j
+@Tag(name = "套餐管理")
 public class SetmealController {
 
   @Resource

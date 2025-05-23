@@ -1,8 +1,8 @@
-package com.sky.mapper.admin;
+package com.sky.mapper;
 
 
 import com.sky.dto.EmployeePageQuery;
-import com.sky.mapper.admin.sql.EmployeeMapperProvider;
+import com.sky.mapper.sql.EmployeeMapperProvider;
 import com.sky.entiry.Employee;
 import java.util.List;
 import org.apache.ibatis.annotations.InsertProvider;

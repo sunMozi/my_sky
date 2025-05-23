@@ -10,7 +10,7 @@ import com.sky.dto.EmployeeLoginDTO;
 import com.sky.dto.EmployeePageQuery;
 import com.sky.exception.BaseException;
 import com.sky.exception.ResponseCodeEnum;
-import com.sky.mapper.admin.EmployeeMapper;
+import com.sky.mapper.EmployeeMapper;
 import com.sky.entiry.Employee;
 import com.sky.result.PageResult;
 import com.sky.server.admin.EmployeeService;

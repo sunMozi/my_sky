@@ -3,6 +3,7 @@ package com.sky.controller.admin;
 
 import com.sky.result.Result;
 import com.sky.utils.RedisUtils;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/admin/shop/")
 @Component("adminShopController")
 @Slf4j
+@Tag(name = "店铺接口")
 public class ShopController {
 
 

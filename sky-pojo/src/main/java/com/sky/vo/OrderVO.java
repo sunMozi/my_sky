@@ -3,6 +3,7 @@ package com.sky.vo;
 
 import com.sky.entiry.OrderDetail;
 import com.sky.entiry.Orders;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,99 +17,27 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-public class OrderVO extends Orders {
+public class OrderVO extends Orders implements Serializable {
 
-  private Integer waybillStatus;
+  //  每一个订单对应的运单状态
+  private Integer  waybillStatus;
 
-  private String courierTelephone;
+  //  骑手电话
+  private  String  courierTelephone;
 
+  //订单详情
   private List<OrderDetail> orderDetailList;
 
 
+  //订单菜品信息
   private String orderDishes;
+  // 顾客性别
+  //性别 0 男性   1 女性
   private String sex;
 
+  //商铺联系手机号
   private String shopTelephone;
 
-  private String shopName;
-
-
-  private Long id;
-
-  //订单号
-  private String number;
-
-  //订单状态 1待付款 2待接单 3已接单 4派送中 5已完成 6已取消 7退款
-  private Integer status;
-
-  //下单用户id
-  private Long userId;
-
-  //地址id
-  private Long addressBookId;
-
-  //下单时间
-  private LocalDateTime orderTime;
-
-  //结账时间
-  private LocalDateTime checkoutTime;
-
-  //支付方式 1微信，2支付宝
-  private Integer payMethod;
-
-  //支付状态 0未支付 1已支付 2退款
-  private Integer payStatus;
-
-  //实收金额
-  private BigDecimal amount;
-
-  //备注
-  private String remark;
-
-  //用户名
-  private String userName;
-
-  //手机号
-  private String phone;
-
-  //地址
-  private String address;
-
-  //该订单出餐时间： 单位 分钟
-  private LocalDateTime mealTime;
-
-  //收货人
-  private String consignee;
-
-  //订单取消原因
-  private String cancelReason;
-
-  //订单拒绝原因
-  private String rejectionReason;
-
-  //订单取消时间
-  private LocalDateTime cancelTime;
-
-  //预计送达时间
-  private LocalDateTime estimatedDeliveryTime;
-
-  //配送状态  1立即送出  0选择具体时间
-  private Integer deliveryStatus;
-
-  //完成时间- 订单完成时间= 运单结束时间
-  private LocalDateTime deliveryTime; // delivery_time
-
-  //打包费
-  private int packAmount;
-
-  //餐具数量
-  private int tablewareNumber;
-
-  //餐具数量状态  1按餐量提供  0选择具体数量
-  private Integer tablewareStatus;
-
-
-  private  Long shopId; //  商铺编号
-
-  private  BigDecimal deliveryFee; //  配送费O
+  // 商铺名称
+  private  String shopName;
 }

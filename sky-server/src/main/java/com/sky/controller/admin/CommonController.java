@@ -3,6 +3,7 @@ package com.sky.controller.admin;
 
 import com.sky.result.Result;
 import com.sky.utils.AliOSSUtils;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @Slf4j
+@Tag(name = "通用接口")
 public class CommonController {
 
 

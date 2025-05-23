@@ -1,4 +1,4 @@
-package com.sky.mapper.admin.sql;
+package com.sky.mapper.sql;
 
 
 import com.sky.dto.OrdersPageQueryDTO;
@@ -26,7 +26,7 @@ public class OrdersMapperProvider {
     OrdersPageQueryDTO query = (OrdersPageQueryDTO) params.get("query");
 
     return new SQL() {{
-      SELECT("*");
+      SELECT("orders.*","tb_trade_order.waybill_status","tb_courier.telephone as courier_telephone");
       FROM("orders");
       buildWhereClause(this, query);
       ORDER_BY("order_time DESC");

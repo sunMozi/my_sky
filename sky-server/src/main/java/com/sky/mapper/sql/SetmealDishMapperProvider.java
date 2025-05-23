@@ -1,4 +1,4 @@
-package com.sky.mapper.admin.sql;
+package com.sky.mapper.sql;
 
 
 import com.sky.entiry.SetmealDish;

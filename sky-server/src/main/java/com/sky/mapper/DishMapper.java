@@ -1,8 +1,8 @@
-package com.sky.mapper.admin;
+package com.sky.mapper;
 
 import com.sky.dto.DishDTO;
 import com.sky.entiry.Dish;
-import com.sky.mapper.admin.sql.DishMapperProvider;
+import com.sky.mapper.sql.DishMapperProvider;
 import com.sky.vo.DishVO;
 import java.util.List;
 import org.apache.ibatis.annotations.DeleteProvider;

@@ -4,7 +4,7 @@ package com.sky.server.admin.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.dto.OrdersPageQueryDTO;
-import com.sky.mapper.admin.OrdersMapper;
+import com.sky.mapper.OrdersMapper;
 import com.sky.result.PageResult;
 import com.sky.server.admin.OrdersServer;
 import com.sky.vo.OrderStatisticsVO;

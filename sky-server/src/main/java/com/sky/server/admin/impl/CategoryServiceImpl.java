@@ -11,8 +11,8 @@ import com.sky.entiry.Category;
 import com.sky.entiry.Dish;
 import com.sky.exception.BaseException;
 import com.sky.exception.ResponseCodeEnum;
-import com.sky.mapper.admin.DishMapper;
-import com.sky.mapper.admin.categoryMapper;
+import com.sky.mapper.DishMapper;
+import com.sky.mapper.CategoryMapper;
 import com.sky.result.PageResult;
 import com.sky.server.admin.categoryService;
 import jakarta.annotation.Resource;
@@ -29,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class CategoryServiceImpl implements categoryService {
 
   @Resource
-  private categoryMapper categoryMapper;
+  private CategoryMapper categoryMapper;
 
   @Resource
   private DishMapper dishMapper;

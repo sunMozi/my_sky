@@ -1,8 +1,8 @@
-package com.sky.mapper.admin;
+package com.sky.mapper;
 
 
 import com.sky.dto.OrdersPageQueryDTO;
-import com.sky.mapper.admin.sql.OrdersMapperProvider;
+import com.sky.mapper.sql.OrdersMapperProvider;
 import com.sky.vo.OrderStatisticsVO;
 import com.sky.vo.OrderVO;
 import java.util.List;

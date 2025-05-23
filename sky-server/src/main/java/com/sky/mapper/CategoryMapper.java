@@ -1,9 +1,9 @@
-package com.sky.mapper.admin;
+package com.sky.mapper;
 
 
 import com.sky.dto.CategoryDTO;
 import com.sky.entiry.Category;
-import com.sky.mapper.admin.sql.categoryMapperProvider;
+import com.sky.mapper.sql.categoryMapperProvider;
 import java.util.List;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.InsertProvider;
@@ -11,7 +11,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.UpdateProvider;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 /**
  * @author moZiA
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
  * @description
  */
 @Mapper
-public interface categoryMapper {
+public interface CategoryMapper {
 
   @SelectProvider(type = categoryMapperProvider.class, method = "selectCategoryList")
   List<Category> selectCategoryList(@Param("categoryDTO") CategoryDTO categoryDTO);

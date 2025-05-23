@@ -8,6 +8,7 @@ import com.sky.result.Result;
 import com.sky.server.admin.DishService;
 import com.sky.vo.DishFlavorVO;
 import com.sky.vo.DishVO;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/admin/dish")
+@Tag(name = "菜品管理")
 public class DishController {
 
   @Resource

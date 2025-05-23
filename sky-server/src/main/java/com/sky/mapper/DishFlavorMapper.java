@@ -1,7 +1,7 @@
-package com.sky.mapper.admin;
+package com.sky.mapper;
 
 import com.sky.entiry.DishFlavor;
-import com.sky.mapper.admin.sql.DishFlavorMapperProvider;
+import com.sky.mapper.sql.DishFlavorMapperProvider;
 import com.sky.vo.FlavorVO;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;

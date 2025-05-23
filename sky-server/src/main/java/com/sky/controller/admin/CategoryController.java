@@ -6,6 +6,7 @@ import com.sky.entiry.Category;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.server.admin.categoryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/admin/category")
+@Tag(name = "分类接口管理")
 public class CategoryController {
 
   @Resource
@@ -53,7 +55,6 @@ public class CategoryController {
     categoryService.updateStatus(status, id);
     return Result.success();
   }
-
 
   @GetMapping("/page")
   public Result<PageResult<Category>> page(CategoryDTO categoryDTO) {

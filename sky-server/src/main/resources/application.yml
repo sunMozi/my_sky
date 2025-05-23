@@ -13,6 +13,7 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -33,10 +34,12 @@ sky:
     admin-ttl: 7200000000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
-    user-secret-key: itheima
+    user-secret-key: hasdiofhkljsahdfljkhsadbnfkasvaasewe123sbdfjihsadflkjhasdlkjfhsidlfuhasdkjlfhbasdkflghskludjfh
     user-ttl: 7200000
     user-token-name: authentication
-
+  wechat:
+    appid: wx702ac0455f09b018
+    secret: 39c941940578eda748057875cb170c7b
 
 # 阿里云oss
 aliyun:
@@ -45,3 +48,13 @@ aliyun:
     accessKeyId: ${ALIBABA_ACCESS_KEY_ID}
     accessKeySecret: ${ALIBABA_ACCESS_KEY_SECRET}
     bucketName: chengzi03
+
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs

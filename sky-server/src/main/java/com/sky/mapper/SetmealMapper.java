@@ -1,11 +1,9 @@
-package com.sky.mapper.admin;
+package com.sky.mapper;
 
 import com.sky.dto.SetmealDTO;
 import com.sky.entiry.Setmeal;
-import com.sky.mapper.admin.sql.SetmealMapperProvider;
+import com.sky.mapper.sql.SetmealMapperProvider;
 import com.sky.vo.SetmealVO;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import java.util.List;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.InsertProvider;

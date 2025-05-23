@@ -12,6 +12,7 @@ import com.sky.result.Result;
 import com.sky.server.admin.EmployeeService;
 import com.sky.utils.JwtUtils;
 import com.sky.vo.EmployeeLoginVO;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/admin/employee")
 @Slf4j
+@Tag(name = "员工接口管理")
 public class EmployeeController {
 
   @Resource

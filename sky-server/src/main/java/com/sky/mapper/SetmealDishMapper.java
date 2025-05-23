@@ -1,9 +1,8 @@
-package com.sky.mapper.admin;
+package com.sky.mapper;
 
 
-import ch.qos.logback.core.joran.conditional.IfAction;
 import com.sky.entiry.SetmealDish;
-import com.sky.mapper.admin.sql.SetmealDishMapperProvider;
+import com.sky.mapper.sql.SetmealDishMapperProvider;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.InsertProvider;
